@@ -1,0 +1,251 @@
+2023-02-11 03:30:44.426  INFO 12234 --- [main] .i.C.CurrencyExchangeKotlinApplicationKt : Starting CurrencyExchangeKotlinApplicationKt using Java 17.0.4.1 on Ignacios-MacBook-Pro.local with PID 12234 (/Users/ignacioillanes/workspace/ucb/I-2023/ArquitecturaDeSoftware/01_conversorDeDivisas/CurrencyExchange-kotlin/target/classes started by ignacioillanes in /Users/ignacioillanes/workspace/ucb/I-2023/ArquitecturaDeSoftware/01_conversorDeDivisas/CurrencyExchange-kotlin)
+2023-02-11 03:30:44.432  INFO 12234 --- [main] .i.C.CurrencyExchangeKotlinApplicationKt : No active profile set, falling back to 1 default profile: "default"
+2023-02-11 03:30:45.109  INFO 12234 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2023-02-11 03:30:45.117  INFO 12234 --- [main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2023-02-11 03:30:45.118  INFO 12234 --- [main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-02-11 03:30:45.192  INFO 12234 --- [main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2023-02-11 03:30:45.192  INFO 12234 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 722 ms
+2023-02-11 03:30:45.745 DEBUG 12234 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-02-11 03:30:45.812 DEBUG 12234 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 3 mappings in 'requestMappingHandlerMapping'
+2023-02-11 03:30:45.834 DEBUG 12234 --- [main] o.s.w.s.h.SimpleUrlHandlerMapping        : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2023-02-11 03:30:45.851 DEBUG 12234 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-02-11 03:30:46.016  INFO 12234 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-11 03:30:46.024  INFO 12234 --- [main] .i.C.CurrencyExchangeKotlinApplicationKt : Started CurrencyExchangeKotlinApplicationKt in 1.898 seconds (JVM running for 2.326)
+2023-02-11 03:30:49.985  INFO 12234 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-11 03:30:49.985  INFO 12234 --- [http-nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2023-02-11 03:30:49.986 DEBUG 12234 --- [http-nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Detected StandardServletMultipartResolver
+2023-02-11 03:30:49.986 DEBUG 12234 --- [http-nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Detected AcceptHeaderLocaleResolver
+2023-02-11 03:30:49.986 DEBUG 12234 --- [http-nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Detected FixedThemeResolver
+2023-02-11 03:30:49.987 DEBUG 12234 --- [http-nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1744d081
+2023-02-11 03:30:49.987 DEBUG 12234 --- [http-nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Detected org.springframework.web.servlet.support.SessionFlashMapManager@393a1e3e
+2023-02-11 03:30:49.988 DEBUG 12234 --- [http-nio-8080-exec-2] o.s.w.s.DispatcherServlet                : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-02-11 03:30:49.988  INFO 12234 --- [http-nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Completed initialization in 3 ms
+2023-02-11 03:30:49.995 DEBUG 12234 --- [http-nio-8080-exec-2] o.s.w.s.DispatcherServlet                : GET "/api/v1/currency/convert", parameters={}
+2023-02-11 03:30:49.999 DEBUG 12234 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ignacioillanes.CurrencyExchangekotlin.Api.ConvertionApi#makeConvertion(ConvertionRequestDto)
+2023-02-11 03:30:50.073 DEBUG 12234 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ConvertionRequestDto(from=USD, to=BOB, amount=0)]
+2023-02-11 03:30:50.078 DEBUG 12234 --- [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.ignacioillanes.CurrencyExchangekotlin.Exception.ConvertionExceptionHandler#handleException(IllegalArgumentException)
+2023-02-11 03:30:50.115 DEBUG 12234 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-11 03:30:50.118 DEBUG 12234 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ResponseDto(success=false, data=null, message=Amount must be greater than zero)]
+2023-02-11 03:30:50.126 DEBUG 12234 --- [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: Amount must be greater than zero]
+2023-02-11 03:30:50.127 DEBUG 12234 --- [http-nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Completed 400 BAD_REQUEST
+2023-02-11 03:57:06.586  INFO 3372 --- [main] .i.C.CurrencyExchangeKotlinApplicationKt : Starting CurrencyExchangeKotlinApplicationKt using Java 17.0.4.1 on Ignacios-MacBook-Pro.local with PID 3372 (/Users/ignacioillanes/workspace/ucb/I-2023/ArquitecturaDeSoftware/01_conversorDeDivisas/CurrencyExchange-kotlin/target/classes started by ignacioillanes in /Users/ignacioillanes/workspace/ucb/I-2023/ArquitecturaDeSoftware/01_conversorDeDivisas/CurrencyExchange-kotlin)
+2023-02-11 03:57:06.589  INFO 3372 --- [main] .i.C.CurrencyExchangeKotlinApplicationKt : No active profile set, falling back to 1 default profile: "default"
+2023-02-11 03:57:07.384  INFO 3372 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-11 03:57:07.400  INFO 3372 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-11 03:57:07.401  INFO 3372 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-02-11 03:57:07.471  INFO 3372 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-11 03:57:07.472  INFO 3372 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 840 ms
+2023-02-11 03:57:08.057 DEBUG 3372 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-02-11 03:57:08.124 DEBUG 3372 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 3 mappings in 'requestMappingHandlerMapping'
+2023-02-11 03:57:08.150 DEBUG 3372 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2023-02-11 03:57:08.159 DEBUG 3372 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-02-11 03:57:08.364  INFO 3372 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-11 03:57:08.372  INFO 3372 --- [main] .i.C.CurrencyExchangeKotlinApplicationKt : Started CurrencyExchangeKotlinApplicationKt in 2.072 seconds (JVM running for 2.371)
+2023-02-11 03:57:15.497  INFO 3372 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-11 03:57:15.498  INFO 3372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-02-11 03:57:15.498 DEBUG 3372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2023-02-11 03:57:15.498 DEBUG 3372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2023-02-11 03:57:15.499 DEBUG 3372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2023-02-11 03:57:15.499 DEBUG 3372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7c242587
+2023-02-11 03:57:15.500 DEBUG 3372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@7daa0103
+2023-02-11 03:57:15.500 DEBUG 3372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-02-11 03:57:15.500  INFO 3372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-02-11 03:57:15.507 DEBUG 3372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/currency/convert", parameters={}
+2023-02-11 03:57:15.511 DEBUG 3372 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ignacioillanes.CurrencyExchangekotlin.Api.ConvertionApi#convert(ConvertionRequestDto)
+2023-02-11 03:57:15.588 DEBUG 3372 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ConvertionRequestDto(from=USD, to=BOB, amount=0)]
+2023-02-11 03:57:15.593  INFO 3372 --- [http-nio-8080-exec-1] c.i.C.Api.ConvertionApi                  : GET /api/v1/currency/convert - from:USD to:BOB amount:0
+2023-02-11 03:57:15.594 DEBUG 3372 --- [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.ignacioillanes.CurrencyExchangekotlin.Exception.ConvertionExceptionHandler#handleException(IllegalArgumentException)
+2023-02-11 03:57:15.630 DEBUG 3372 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-11 03:57:15.633 DEBUG 3372 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ResponseDto(success=false, data=null, message=Amount must be greater than zero)]
+2023-02-11 03:57:15.641 DEBUG 3372 --- [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: Amount must be greater than zero]
+2023-02-11 03:57:15.642 DEBUG 3372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2023-02-11 03:57:24.497 DEBUG 3372 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/currency/convert", parameters={}
+2023-02-11 03:57:24.497 DEBUG 3372 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ignacioillanes.CurrencyExchangekotlin.Api.ConvertionApi#convert(ConvertionRequestDto)
+2023-02-11 03:57:24.498 DEBUG 3372 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ConvertionRequestDto(from=USD, to=BOB, amount=12)]
+2023-02-11 03:57:24.499  INFO 3372 --- [http-nio-8080-exec-4] c.i.C.Api.ConvertionApi                  : GET /api/v1/currency/convert - from:USD to:BOB amount:12
+2023-02-11 03:57:25.700  INFO 3372 --- [http-nio-8080-exec-4] c.i.C.Api.ConvertionApi                  : 200 OK
+2023-02-11 03:57:25.703 DEBUG 3372 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-11 03:57:25.705 DEBUG 3372 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ResponseDto(success=true, data=ConvertionDto(query=QueryDto(from=BOB, to=USD, amount=12), result=1.7 (truncated)...]
+2023-02-11 03:57:25.712 DEBUG 3372 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-11 03:58:05.536 DEBUG 3372 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/currency/convert", parameters={}
+2023-02-11 03:58:05.537 DEBUG 3372 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ignacioillanes.CurrencyExchangekotlin.Api.ConvertionApi#convert(ConvertionRequestDto)
+2023-02-11 03:58:05.538 DEBUG 3372 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ConvertionRequestDto(from=USD, to=BOB, amount=12)]
+2023-02-11 03:58:05.538  INFO 3372 --- [http-nio-8080-exec-5] c.i.C.Api.ConvertionApi                  : GET /api/v1/currency/convert - from:USD to:BOB amount:12
+2023-02-11 03:58:05.873  INFO 3372 --- [http-nio-8080-exec-5] c.i.C.Api.ConvertionApi                  : 200 OK
+2023-02-11 03:58:05.874 DEBUG 3372 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-11 03:58:05.874 DEBUG 3372 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ResponseDto(success=true, data=ConvertionDto(query=QueryDto(from=BOB, to=USD, amount=12), result=1.7 (truncated)...]
+2023-02-11 03:58:05.875 DEBUG 3372 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-11 03:58:21.318  INFO 8124 --- [main] .i.C.CurrencyExchangeKotlinApplicationKt : Starting CurrencyExchangeKotlinApplicationKt using Java 17.0.4.1 on Ignacios-MacBook-Pro.local with PID 8124 (/Users/ignacioillanes/workspace/ucb/I-2023/ArquitecturaDeSoftware/01_conversorDeDivisas/CurrencyExchange-kotlin/target/classes started by ignacioillanes in /Users/ignacioillanes/workspace/ucb/I-2023/ArquitecturaDeSoftware/01_conversorDeDivisas/CurrencyExchange-kotlin)
+2023-02-11 03:58:21.320  INFO 8124 --- [main] .i.C.CurrencyExchangeKotlinApplicationKt : No active profile set, falling back to 1 default profile: "default"
+2023-02-11 03:58:22.030  INFO 8124 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-11 03:58:22.037  INFO 8124 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-11 03:58:22.038  INFO 8124 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-02-11 03:58:22.101  INFO 8124 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-11 03:58:22.102  INFO 8124 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 747 ms
+2023-02-11 03:58:22.678 DEBUG 8124 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-02-11 03:58:22.740 DEBUG 8124 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 3 mappings in 'requestMappingHandlerMapping'
+2023-02-11 03:58:22.765 DEBUG 8124 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2023-02-11 03:58:22.773 DEBUG 8124 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-02-11 03:58:22.960  INFO 8124 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-11 03:58:22.967  INFO 8124 --- [main] .i.C.CurrencyExchangeKotlinApplicationKt : Started CurrencyExchangeKotlinApplicationKt in 1.906 seconds (JVM running for 2.126)
+2023-02-11 03:58:31.923  INFO 8124 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-11 03:58:31.923  INFO 8124 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-02-11 03:58:31.923 DEBUG 8124 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2023-02-11 03:58:31.923 DEBUG 8124 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2023-02-11 03:58:31.924 DEBUG 8124 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2023-02-11 03:58:31.924 DEBUG 8124 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6be608ce
+2023-02-11 03:58:31.925 DEBUG 8124 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@3f8b2837
+2023-02-11 03:58:31.925 DEBUG 8124 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-02-11 03:58:31.925  INFO 8124 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-02-11 03:58:31.932 DEBUG 8124 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/currency/convert", parameters={}
+2023-02-11 03:58:31.935 DEBUG 8124 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ignacioillanes.CurrencyExchangekotlin.Api.ConvertionApi#convert(ConvertionRequestDto)
+2023-02-11 03:58:32.003 DEBUG 8124 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ConvertionRequestDto(from=USD, to=BOB, amount=12)]
+2023-02-11 03:58:32.008  INFO 8124 --- [http-nio-8080-exec-2] c.i.C.Api.ConvertionApi                  : GET /api/v1/currency/convert - from:USD to:BOB amount:12
+2023-02-11 03:58:37.906 ERROR 8124 --- [http-nio-8080-exec-2] c.i.C.Bl.ConvertionBl                    : Error while calling external service
+
+com.ignacioillanes.CurrencyExchangekotlin.Exception.ConvertionException: Error while converting currency
+	at com.ignacioillanes.CurrencyExchangekotlin.Bl.ConvertionBl.makeConvertion(ConvertionBl.kt:46) ~[classes/:na]
+	at com.ignacioillanes.CurrencyExchangekotlin.Api.ConvertionApi.convert(ConvertionApi.kt:31) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.25.jar:5.3.25]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.25.jar:5.3.25]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.25.jar:5.3.25]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.25.jar:5.3.25]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.25.jar:5.3.25]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.25.jar:5.3.25]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071) ~[spring-webmvc-5.3.25.jar:5.3.25]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964) ~[spring-webmvc-5.3.25.jar:5.3.25]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.25.jar:5.3.25]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.25.jar:5.3.25]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:670) ~[tomcat-embed-core-9.0.71.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.25.jar:5.3.25]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779) ~[tomcat-embed-core-9.0.71.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.71.jar:9.0.71]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.25.jar:5.3.25]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.25.jar:5.3.25]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.25.jar:5.3.25]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.25.jar:5.3.25]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.25.jar:5.3.25]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.25.jar:5.3.25]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:891) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1784) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-02-11 03:58:37.926 DEBUG 8124 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Failed to complete request: javax.naming.ServiceUnavailableException: Error while connecting to external service
+2023-02-11 03:58:37.951 ERROR 8124 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is javax.naming.ServiceUnavailableException: Error while connecting to external service] with root cause
+
+javax.naming.ServiceUnavailableException: Error while connecting to external service
+	at com.ignacioillanes.CurrencyExchangekotlin.Bl.ConvertionBl.makeConvertion(ConvertionBl.kt:53) ~[classes/:na]
+	at com.ignacioillanes.CurrencyExchangekotlin.Api.ConvertionApi.convert(ConvertionApi.kt:31) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.25.jar:5.3.25]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.25.jar:5.3.25]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.25.jar:5.3.25]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.25.jar:5.3.25]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.25.jar:5.3.25]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.25.jar:5.3.25]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071) ~[spring-webmvc-5.3.25.jar:5.3.25]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964) ~[spring-webmvc-5.3.25.jar:5.3.25]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.25.jar:5.3.25]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.25.jar:5.3.25]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:670) ~[tomcat-embed-core-9.0.71.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.25.jar:5.3.25]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779) ~[tomcat-embed-core-9.0.71.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.71.jar:9.0.71]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.25.jar:5.3.25]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.25.jar:5.3.25]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.25.jar:5.3.25]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.25.jar:5.3.25]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.25.jar:5.3.25]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.25.jar:5.3.25]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:891) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1784) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.71.jar:9.0.71]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-02-11 03:58:38.063 DEBUG 8124 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2023-02-11 03:58:38.064 DEBUG 8124 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2023-02-11 03:58:38.070 DEBUG 8124 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-11 03:58:38.082 DEBUG 8124 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Sat Feb 11 03:58:38 BOT 2023, status=500, error=Internal Server Error, path=/api/v1/curre (truncated)...]
+2023-02-11 03:58:38.093 DEBUG 8124 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 500
+2023-02-11 04:00:26.067  INFO 14849 --- [main] .i.C.CurrencyExchangeKotlinApplicationKt : Starting CurrencyExchangeKotlinApplicationKt using Java 17.0.4.1 on Ignacios-MacBook-Pro.local with PID 14849 (/Users/ignacioillanes/workspace/ucb/I-2023/ArquitecturaDeSoftware/01_conversorDeDivisas/CurrencyExchange-kotlin/target/classes started by ignacioillanes in /Users/ignacioillanes/workspace/ucb/I-2023/ArquitecturaDeSoftware/01_conversorDeDivisas/CurrencyExchange-kotlin)
+2023-02-11 04:00:26.070  INFO 14849 --- [main] .i.C.CurrencyExchangeKotlinApplicationKt : No active profile set, falling back to 1 default profile: "default"
+2023-02-11 04:00:26.830  INFO 14849 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-11 04:00:26.843  INFO 14849 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-11 04:00:26.844  INFO 14849 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-02-11 04:00:26.905  INFO 14849 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-11 04:00:26.905  INFO 14849 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 791 ms
+2023-02-11 04:00:27.475 DEBUG 14849 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-02-11 04:00:27.543 DEBUG 14849 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 3 mappings in 'requestMappingHandlerMapping'
+2023-02-11 04:00:27.569 DEBUG 14849 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2023-02-11 04:00:27.578 DEBUG 14849 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-02-11 04:00:27.759  INFO 14849 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-11 04:00:27.767  INFO 14849 --- [main] .i.C.CurrencyExchangeKotlinApplicationKt : Started CurrencyExchangeKotlinApplicationKt in 1.995 seconds (JVM running for 2.213)
+2023-02-11 04:00:32.502  INFO 14849 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-11 04:00:32.502  INFO 14849 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-02-11 04:00:32.502 DEBUG 14849 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2023-02-11 04:00:32.502 DEBUG 14849 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2023-02-11 04:00:32.502 DEBUG 14849 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2023-02-11 04:00:32.503 DEBUG 14849 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2fc3fc51
+2023-02-11 04:00:32.504 DEBUG 14849 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@23f4bf84
+2023-02-11 04:00:32.504 DEBUG 14849 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-02-11 04:00:32.504  INFO 14849 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-02-11 04:00:32.511 DEBUG 14849 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/currency/convert", parameters={}
+2023-02-11 04:00:32.514 DEBUG 14849 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ignacioillanes.CurrencyExchangekotlin.Api.ConvertionApi#convert(ConvertionRequestDto)
+2023-02-11 04:00:32.592 DEBUG 14849 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ConvertionRequestDto(from=USD, to=BOB, amount=12)]
+2023-02-11 04:00:32.596  INFO 14849 --- [http-nio-8080-exec-2] c.i.C.Api.ConvertionApi                  : GET /api/v1/currency/convert - from:USD to:BOB amount:12
+2023-02-11 04:00:33.545  INFO 14849 --- [http-nio-8080-exec-2] c.i.C.Api.ConvertionApi                  : 200 OK
+2023-02-11 04:00:33.572 DEBUG 14849 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-11 04:00:33.577 DEBUG 14849 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ResponseDto(success=true, data=ConvertionDto(query=QueryDto(from=USD, to=BOB, amount=12), result=82. (truncated)...]
+2023-02-11 04:00:33.590 DEBUG 14849 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
