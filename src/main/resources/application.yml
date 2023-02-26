@@ -1,10 +1,12 @@
 spring:
   datasource:
     type: org.postgresql.jdbc2.optional.SimpleDataSource
-    username: postgres
-    password: password
-    url: jdbc:postgresql://localhost:5432/software
+    username: ${USERNAME:postgres}
+    password: ${PASSWORD:password}
+    url: ${URL:jdbc:postgresql://localhost:5432/software}
 
   jpa:
     hibernate:
       ddl-auto: update
+  application:
+    name: Currency-Converter

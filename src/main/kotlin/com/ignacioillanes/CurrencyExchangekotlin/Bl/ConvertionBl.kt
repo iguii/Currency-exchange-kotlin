@@ -61,7 +61,7 @@ class ConvertionBl  @Autowired constructor(private val currencyRepository: Curre
             currency.amount = amount
             currency.result = convertionDto.result
             currency.date = Date()
-            
+
             currencyRepository.save(currency)
 
             return convertionDto
