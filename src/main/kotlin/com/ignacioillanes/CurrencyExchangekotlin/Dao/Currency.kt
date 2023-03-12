@@ -17,4 +17,8 @@ class Currency (
     var id : Long = 0,
 ){
     constructor() : this("", "", BigDecimal.ZERO, BigDecimal.ZERO, Date())
+
+    override fun toString(): String {
+        return "Currency(currencyFrom='$currencyFrom', currencyTo='$currencyTo', amount=$amount, result=$result, date=$date, id=$id)"
+    }
 }

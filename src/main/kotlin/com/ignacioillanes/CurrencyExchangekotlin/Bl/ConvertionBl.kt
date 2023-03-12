@@ -5,6 +5,8 @@ import com.fasterxml.jackson.module.kotlin.readValue
 import com.ignacioillanes.CurrencyExchangekotlin.Dao.repository.CurrencyRepository
 import com.ignacioillanes.CurrencyExchangekotlin.Dto.ConvertionDto
 import com.ignacioillanes.CurrencyExchangekotlin.Dao.Currency
+import com.ignacioillanes.CurrencyExchangekotlin.Dao.repository.CurrenciesRepository
+import com.ignacioillanes.CurrencyExchangekotlin.Dto.QueryDto
 import com.ignacioillanes.CurrencyExchangekotlin.Exception.ConvertionException
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -12,13 +14,15 @@ import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.data.domain.PageRequest
 import org.springframework.stereotype.Service
 import java.math.BigDecimal
 import java.util.*
 import javax.naming.ServiceUnavailableException
 
 @Service
-class ConvertionBl  @Autowired constructor(private val currencyRepository: CurrencyRepository) {
+class ConvertionBl  @Autowired constructor(private val currencyRepository: CurrencyRepository,
+                                           private val currenciesRepository: CurrenciesRepository) {
     @Value("\${fixer.api.key}")
     lateinit var API_KEY : String;
 
@@ -29,6 +33,22 @@ class ConvertionBl  @Autowired constructor(private val currencyRepository: Curre
     val objectMapper = jacksonObjectMapper();
     val logger : Logger = LoggerFactory.getLogger(ConvertionBl::class.java)
 
+    fun getConvertions(page: Int, size: Int): List<ConvertionDto> {
+        logger.debug("getConvertions Business Logic initiated")
+
+        // Get from DB using PagingAndSortingRepository
+        val currencies : List<Currency> = currenciesRepository.findAll(PageRequest.of(page, size)).toList()
+
+        // parsing to ConvertionDto
+        val convertions : MutableList<ConvertionDto> = mutableListOf()
+        currencies.forEach {
+            val query = QueryDto(it.currencyFrom, it.currencyTo, it.amount)
+            convertions.add(
+                ConvertionDto(query, it.result)
+            )
+        }
+        return convertions
+    }
     fun makeConvertion(
         to: String,
         from: String,

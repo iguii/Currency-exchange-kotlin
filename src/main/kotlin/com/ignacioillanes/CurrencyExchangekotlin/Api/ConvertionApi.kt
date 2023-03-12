@@ -20,15 +20,28 @@ import java.math.BigDecimal
 class ConvertionApi (private val convertionBl : ConvertionBl){
     val logger : Logger = LoggerFactory.getLogger(ConvertionApi::class.java)
 
+    @GetMapping("")
+    fun getConvertions(
+        @RequestParam page: Int,
+        @RequestParam size: Int
+    ) : ResponseEntity<ResponseDto<List<ConvertionDto>>> {
+        logger.info("GET /api/v1/currency/")
+        val convertions = convertionBl.getConvertions(page, size);
+        val response = ResponseDto(true, convertions, "Convertions retrieved successfully")
+
+        logger.info("200 OK")
+        return ResponseEntity.ok(response)
+    }
+
     @GetMapping("/convert")
     fun convert(
         @RequestParam to: String,
         @RequestParam from: String,
         @RequestParam amount: BigDecimal
-    ): ResponseEntity<ResponseDto> {
+    ): ResponseEntity<ResponseDto<ConvertionDto>> {
         logger.info("GET /api/v1/currency/convert - from:$from to:$to amount:$amount")
         val convertion : ConvertionDto = convertionBl.makeConvertion(to, from, amount)
-        val response : ResponseDto = ResponseDto(true, convertion, "Convertion made successfully")
+        val response = ResponseDto(true, convertion,"Convertion made successfully")
 
         logger.info("200 OK")
         return ResponseEntity.ok(response)

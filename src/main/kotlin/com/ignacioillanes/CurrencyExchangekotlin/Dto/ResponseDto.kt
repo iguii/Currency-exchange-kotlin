@@ -1,7 +1,7 @@
 package com.ignacioillanes.CurrencyExchangekotlin.Dto
 
-data class ResponseDto (
+data class ResponseDto<T> (
     var success: Boolean,
-    var data: ConvertionDto?,
+    var data: T,
     var message: String,
 )
