@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 import java.math.BigDecimal
 
@@ -21,12 +22,10 @@ class ConvertionApi (private val convertionBl : ConvertionBl){
 
     @GetMapping("/convert")
     fun convert(
-        @RequestBody request : ConvertionRequestDto
+        @RequestParam to: String,
+        @RequestParam from: String,
+        @RequestParam amount: BigDecimal
     ): ResponseEntity<ResponseDto> {
-        val to : String = request.to
-        val from : String = request.from
-        val amount : BigDecimal = request.amount
-
         logger.info("GET /api/v1/currency/convert - from:$from to:$to amount:$amount")
         val convertion : ConvertionDto = convertionBl.makeConvertion(to, from, amount)
         val response : ResponseDto = ResponseDto(true, convertion, "Convertion made successfully")
