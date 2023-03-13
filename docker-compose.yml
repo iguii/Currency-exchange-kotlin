@@ -1,4 +1,12 @@
-version: "1.0"
+version: "2.0"
+
+networks:
+  custom-network:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.11.0.0/16
+          gateway: 172.11.0.1
 
 services:
   postgres:
@@ -11,12 +19,34 @@ services:
       POSTGRES_DB: software
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
+    networks:
+      custom-network:
+        ipv4_address: 172.11.0.2
+
   currency-converter:
-    image: currency-converter:1.0.0
+    image: currency-converter:2.5.0
     ports:
       - "8080:8080"
     environment:
+      USERNAME: postgres
+      PASSWORD: password
       URL: jdbc:postgresql://postgres:5432/software
+      API_KEY: xsYaE9qfD8hIewxNS9SneoFLo4RetSHK
+      BASE_URL: https://api.apilayer.com/fixer
     restart: always
+    networks:
+      custom-network:
+        ipv4_address: 172.11.0.3
     depends_on:
       - postgres
+
+  frontend:
+    image: currency-converter-angular:1.0.0
+    ports:
+      - "80:80"
+    restart: always
+    depends_on:
+      - currency-converter
+    networks:
+      custom-network:
+        ipv4_address: 172.11.0.4
