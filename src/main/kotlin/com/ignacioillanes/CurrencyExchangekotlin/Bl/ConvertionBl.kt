@@ -44,7 +44,7 @@ class ConvertionBl  @Autowired constructor(private val currencyRepository: Curre
         currencies.forEach {
             val query = QueryDto(it.currencyFrom, it.currencyTo, it.amount)
             convertions.add(
-                ConvertionDto(query, it.result)
+                ConvertionDto(query, it.result, it.date)
             )
         }
         return convertions

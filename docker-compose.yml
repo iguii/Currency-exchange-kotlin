@@ -41,7 +41,7 @@ services:
       - postgres
 
   frontend:
-    image: currency-converter-angular:1.0.0
+    image: currency-converter-angular:2.0.0
     ports:
       - "80:80"
     restart: always

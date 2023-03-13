@@ -6,7 +6,7 @@ spring:
     url: ${URL:jdbc:postgresql://localhost:5432/software}
 
 api:
-  key: ${API_KEY}
+  key: ${API_KEY:xsYaE9qfD8hIewxNS9SneoFLo4RetSHKt}
   base-url: ${BASE_URL:https://api.apilayer.com/fixer}
 
   jpa:
