@@ -23,10 +23,10 @@ import javax.naming.ServiceUnavailableException
 @Service
 class ConvertionBl  @Autowired constructor(private val currencyRepository: CurrencyRepository,
                                            private val currenciesRepository: CurrenciesRepository) {
-    @Value("\${fixer.api.key}")
+    @Value("\${api.key}")
     lateinit var API_KEY : String;
 
-    @Value("\${fixer.api.baseurl}")
+    @Value("\${api.base-url}")
     lateinit var BASE_URL : String;
 
     val client = OkHttpClient()
@@ -89,5 +89,10 @@ class ConvertionBl  @Autowired constructor(private val currencyRepository: Curre
             logger.error("Error while calling external service", e)
             throw ServiceUnavailableException("Error while connecting to external service");
         }
+    }
+
+    fun getConvertionsSize(): Long {
+        logger.debug("getConvertionsSize Business Logic initiated")
+        return currenciesRepository.count()
     }
 }

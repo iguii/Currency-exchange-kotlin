@@ -33,6 +33,16 @@ class ConvertionApi (private val convertionBl : ConvertionBl){
         return ResponseEntity.ok(response)
     }
 
+    @GetMapping("/size")
+    fun getConvertionsSize() : ResponseEntity<ResponseDto<Long>> {
+        logger.info("GET /api/v1/currency/size")
+        val size = convertionBl.getConvertionsSize();
+        val response = ResponseDto(true, size, "Convertions size retrieved successfully")
+
+        logger.info("200 OK")
+        return ResponseEntity.ok(response)
+    }
+
     @GetMapping("/convert")
     fun convert(
         @RequestParam to: String,

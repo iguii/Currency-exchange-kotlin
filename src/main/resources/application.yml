@@ -5,6 +5,10 @@ spring:
     password: ${PASSWORD:password}
     url: ${URL:jdbc:postgresql://localhost:5432/software}
 
+api:
+  key: ${API_KEY}
+  base-url: ${BASE_URL:https://api.apilayer.com/fixer}
+
   jpa:
     hibernate:
       ddl-auto: update
