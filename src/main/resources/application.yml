@@ -1,12 +1,16 @@
+
+
 spring:
+  application:
+      name: Currency-Converter
   datasource:
     type: org.postgresql.jdbc2.optional.SimpleDataSource
-    username: ${USERNAME:postgres}
-    password: ${PASSWORD:password}
-    url: ${URL:jdbc:postgresql://localhost:5432/software}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:password}
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/software}
 
 api:
-  key: ${API_KEY:xsYaE9qfD8hIewxNS9SneoFLo4RetSHKt}
+  key: ${API_KEY:xsYaE9qfD8hIewxNS9SneoFLo4RetSHK}
   base-url: ${BASE_URL:https://api.apilayer.com/fixer}
 
   jpa:
@@ -14,3 +18,32 @@ api:
       ddl-auto: update
   application:
     name: Currency-Converter
+
+keycloak:
+  auth-server-url: ${KEYCLOAK_AUTH_SERVER_URL:http://localhost:8081}
+  auto-detect-bearer-only: true
+  credentials:
+    secret: ${KEYCLOAK_CREDENTIALS_SECRET:E6yW1d3RXJit2RubIPfPuX1U3gJdSaG4}
+  realm: ${KEYCLOAK_REALM:software}
+  resource: ${KEYCLOAK_RESOURCE:backend}
+  ssl-required: none
+  use-resource-role-mappings: false
+  security-constraints:
+    - auth-roles:
+        - ADMIN
+      securityCollections:
+        - name: SERVICIOS DE ADMINISTRADOR
+          omitted-methods:
+            - OPTIONS
+          patterns:
+            - /api/v1/currency/*
+    - auth-roles:
+        - USER
+      security-collections:
+        - name: SERVICIOS DE USUARIO
+          omitted-methods:
+            - OPTIONS
+          patterns:
+            - /api/v1/currency/convert
+server:
+  port: 8008
