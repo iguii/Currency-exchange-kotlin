@@ -14,8 +14,8 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: software
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
@@ -28,17 +28,17 @@ services:
     ports:
       - "8080:8008"
     environment:
-      DB_USERNAME: postgres
-      DB_PASSWORD: password
-      DB_URL: jdbc:postgresql://postgres:5432/software
+      DB_USERNAME: ${POSTGRES_USER}
+      DB_PASSWORD: ${POSTGRES_PASSWORD}
+      DB_URL: ${DB_URL}
 
-      API_KEY: xsYaE9qfD8hIewxNS9SneoFLo4RetSHK
-      BASE_URL: https://api.apilayer.com/fixer
+      API_KEY: ${FIXER_API_KEY}
+      BASE_URL: ${FIXER_API_BASE_URL}
 
-      KEYCLOAK_AUTH_SERVER_URL: http://10.20.21.64:8081
-      KEYCLOAK_REALM: software
-      KEYCLOAK_RESOURCE: backend
-      KEYCLOAK_CREDENTIALS_SECRET: E6yW1d3RXJit2RubIPfPuX1U3gJdSaG4
+      KEYCLOAK_AUTH_SERVER_URL: ${KEYCLOAK_AUTH_SERVER_URL}
+      KEYCLOAK_REALM: ${KEYCLOAK_REALM}
+      KEYCLOAK_RESOURCE: ${KEYCLOAK_RESOURCE}
+      KEYCLOAK_CREDENTIALS_SECRET: ${KEYCLOAK_CREDENTIALS_SECRET}
     restart: always
     networks:
       custom-network:
