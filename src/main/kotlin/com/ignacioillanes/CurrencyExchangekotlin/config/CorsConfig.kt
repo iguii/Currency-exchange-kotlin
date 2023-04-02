@@ -1,19 +1,40 @@
 package com.ignacioillanes.CurrencyExchangekotlin.config
 
-import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.web.cors.CorsConfiguration
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource
+import org.springframework.web.filter.CorsFilter
 
 @Configuration
 class CorsConfig {
     @Bean
-    fun corsFilter() = org.springframework.web.filter.CorsFilter(org.springframework.web.cors.UrlBasedCorsConfigurationSource().apply {
-        registerCorsConfiguration("/**", org.springframework.web.cors.CorsConfiguration().apply {
-            allowedOrigins = listOf("http://localhost:4200")
-            allowedMethods = listOf("GET", "POST", "PUT", "DELETE", "OPTIONS")
-            allowedHeaders = listOf("Content-Type", "X-Requested-With", "accept", "Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers")
-            exposedHeaders = listOf("Access-Control-Allow-Origin", "Access-Control-Allow-Credentials")
-            maxAge = 3600
-        })
-    })
+    fun corsFilter(): CorsFilter {
+        val corsConfiguration = CorsConfiguration();
+        corsConfiguration.allowCredentials = false;
+        corsConfiguration.allowedOrigins = listOf("http://localhost:4200", "http://localhost:80")
+        corsConfiguration.allowedHeaders = listOf(
+            "Origin",
+            "Access-Control-Allow-Origin",
+            "Content-Type", "Accept", "Authorization",
+            "Origin, Accept", "X-Requested-With",
+            "Access-Control-Request-Method",
+            "Access-Control-Request-Headers"
+        );
+        corsConfiguration.exposedHeaders = listOf(
+            "Origin", "Content-Type",
+            "Accept", "Authorization",
+            "Access-Control-Allow-Origin",
+            "Access-Control-Allow-Origin",
+            "Access-Control-Allow-Credentials"
+        );
+        corsConfiguration.allowedMethods = listOf(
+            "GET", "POST", "PUT", "DELETE",
+            "OPTIONS"
+        )
+        val urlBasedCorsConfigurationSource = UrlBasedCorsConfigurationSource();
+        urlBasedCorsConfigurationSource
+            .registerCorsConfiguration("/**", corsConfiguration);
+        return CorsFilter(urlBasedCorsConfigurationSource)
+    }
 }
