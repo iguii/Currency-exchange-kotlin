@@ -24,15 +24,21 @@ services:
         ipv4_address: 172.11.0.2
 
   currency-converter:
-    image: currency-converter:2.5.0
+    image: currency-converter:3.0.1
     ports:
-      - "8080:8080"
+      - "8080:8008"
     environment:
-      USERNAME: postgres
-      PASSWORD: password
-      URL: jdbc:postgresql://postgres:5432/software
+      DB_USERNAME: postgres
+      DB_PASSWORD: password
+      DB_URL: jdbc:postgresql://postgres:5432/software
+
       API_KEY: xsYaE9qfD8hIewxNS9SneoFLo4RetSHK
       BASE_URL: https://api.apilayer.com/fixer
+
+      KEYCLOAK_AUTH_SERVER_URL: http://10.20.21.64:8081
+      KEYCLOAK_REALM: software
+      KEYCLOAK_RESOURCE: backend
+      KEYCLOAK_CREDENTIALS_SECRET: E6yW1d3RXJit2RubIPfPuX1U3gJdSaG4
     restart: always
     networks:
       custom-network:
@@ -41,7 +47,7 @@ services:
       - postgres
 
   frontend:
-    image: currency-converter-angular:2.0.0
+    image: currency-converter-angular:3.0.0
     ports:
       - "80:80"
     restart: always
