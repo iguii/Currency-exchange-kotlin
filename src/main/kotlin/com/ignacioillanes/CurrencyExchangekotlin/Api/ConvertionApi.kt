@@ -20,7 +20,7 @@ import java.math.BigDecimal
 class ConvertionApi (private val convertionBl : ConvertionBl){
     val logger : Logger = LoggerFactory.getLogger(ConvertionApi::class.java)
 
-    @GetMapping("")
+    @GetMapping("/list")
     fun getConvertions(
         @RequestParam page: Int,
         @RequestParam size: Int
