@@ -47,3 +47,5 @@ keycloak:
             - /api/v1/currency/convert
 server:
   port: 8008
+#logging:
+#  config: classpath:logback.xml

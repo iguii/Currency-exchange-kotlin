@@ -7,7 +7,7 @@ COPY ${DEPENDENCY}/META-INF /app/META-INF
 COPY ${DEPENDENCY}/BOOT-INF/classes /app
 
 # logback con volumenes
-COPY src/main/resources/logback.xml /BOOT-INF/classes/logback.xml
+#COPY src/main/resources/logback.xml /BOOT-INF/classes/logback.xml
 
 # Database
 ENV DB_USERNAME=postgres

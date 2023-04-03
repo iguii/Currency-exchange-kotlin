@@ -27,6 +27,8 @@ services:
     image: currency-converter:3.0.1
     ports:
       - "8080:8008"
+    volumes:
+      - ~/Desktop/logs/currency-converter:/logs/currency-converter
     environment:
       DB_USERNAME: ${POSTGRES_USER}
       DB_PASSWORD: ${POSTGRES_PASSWORD}
@@ -50,6 +52,8 @@ services:
     image: currency-converter-angular:3.0.0
     ports:
       - "80:80"
+    volumes:
+      - /Users/ignacioillanes/workspace/ucb/I-2023/ArquitecturaDeSoftware/01_conversorDeDivisas/software-angular/nginx.conf:/etc/nginx/nginx.conf
     restart: always
     depends_on:
       - currency-converter
